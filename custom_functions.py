@@ -18,7 +18,6 @@ def read_gsheet(gsheet, sheetname, head=1):
     creds = ServiceAccountCredentials.from_json_keyfile_name(path_to_key, scope)
     client = gspread.authorize(creds)
     
-    gsheet = gsheet
     
     sheet = client.open_by_key(gsheet).worksheet(sheetname)
     title = client.open_by_key(gsheet).title
